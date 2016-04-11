@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class RoverRotationTests {
+public class RoverRotationTest {
     @Test
     public void facingNorthRotateLeft() {
         Rover rover = new Rover(0, 0, "N");

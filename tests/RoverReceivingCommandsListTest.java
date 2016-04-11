@@ -2,7 +2,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class RoverReceivingCommandsListTests {
+public class RoverReceivingCommandsListTest {
     @Test
     public void noCommands() {
         Rover rover = new Rover(0, 0, "N");

@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class RoverEqualityTests {
+public class RoverEqualityTest {
     @Test
     public void equalRovers() {
         assertEquals(new Rover(1, 1, "N"), new Rover(1, 1, "N"));
