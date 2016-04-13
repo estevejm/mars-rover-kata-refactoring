@@ -2,13 +2,13 @@ public class Direction {
 
     private String direction;
 
-    private Direction(String direction) {
+    protected Direction(String direction) {
         this.direction = direction;
     }
 
     public Direction rotateLeft() {
         if (direction.equals("N")) {
-            return Direction.create("W");
+            throw new IllegalStateException();
         } else if (direction.equals("S")) {
             return Direction.create("E");
         } else if (direction.equals("W")) {
@@ -20,7 +20,7 @@ public class Direction {
 
     public Direction rotateRight() {
         if (direction.equals("N")) {
-            return Direction.create("E");
+            throw new IllegalStateException();
         } else if (direction.equals("S")) {
             return Direction.create("W");
         } else if (direction.equals("W")) {
@@ -35,6 +35,10 @@ public class Direction {
     }
 
     public static Direction create(String direction) {
+        if (direction.equals("N")) {
+            return new North();
+        }
+
         return new Direction(direction);
     }
 
