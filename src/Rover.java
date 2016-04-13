@@ -1,5 +1,6 @@
 public class Rover {
 
+    private Direction directionType;
     private String direction;
     private int y;
     private int x;
@@ -48,35 +49,22 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        if (getDirection().equals("N")) {
-            setDirection("W");
-        } else if (getDirection().equals("S")) {
-            setDirection("E");
-        } else if (getDirection().equals("W")) {
-            setDirection("S");
-        } else {
-            setDirection("N");
-        }
+        this.directionType.rotateLeft();
+        setDirection(this.directionType.getDirection());
     }
 
     private void rotateRight() {
-        if (getDirection().equals("N")) {
-            setDirection("E");
-        } else if (getDirection().equals("S")) {
-            setDirection("W");
-        } else if (getDirection().equals("W")) {
-            setDirection("N");
-        } else {
-            setDirection("S");
-        }
+        this.directionType.rotateRight();
+        setDirection(this.directionType.getDirection());
     }
 
     private String getDirection() {
-        return direction;
+        return directionType.getDirection();
     }
 
     private void setDirection(String direction) {
         this.direction = direction;
+        this.directionType = new Direction(direction);
     }
 
     @Override
