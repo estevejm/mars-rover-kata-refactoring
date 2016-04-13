@@ -3,15 +3,15 @@ public class Direction {
     private String direction;
 
     public Direction(String direction) {
-        setDirection(direction);
+        this.direction = direction;
     }
 
     public Direction rotateLeft() {
-        if (getDirection().equals("N")) {
+        if (direction.equals("N")) {
             return Direction.create("W");
-        } else if (getDirection().equals("S")) {
+        } else if (direction.equals("S")) {
             return Direction.create("E");
-        } else if (getDirection().equals("W")) {
+        } else if (direction.equals("W")) {
             return Direction.create("S");
         } else {
             return Direction.create("N");
@@ -19,11 +19,11 @@ public class Direction {
     }
 
     public Direction rotateRight() {
-        if (getDirection().equals("N")) {
+        if (direction.equals("N")) {
             return Direction.create("E");
-        } else if (getDirection().equals("S")) {
+        } else if (direction.equals("S")) {
             return Direction.create("W");
-        } else if (getDirection().equals("W")) {
+        } else if (direction.equals("W")) {
             return Direction.create("N");
         } else {
             return Direction.create("S");
@@ -32,10 +32,6 @@ public class Direction {
 
     public String getDirection() {
         return direction;
-    }
-
-    private void setDirection(String direction) {
-        this.direction = direction;
     }
 
     public static Direction create(String direction) {
