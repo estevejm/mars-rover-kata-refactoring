@@ -56,7 +56,7 @@ public class Rover {
     }
 
     private String getDirection() {
-        return direction.getDirection();
+        return direction.getRepresentation();
     }
 
     private void setDirection(Direction direction) {

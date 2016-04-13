@@ -1,9 +1,9 @@
 public class Direction {
 
-    private String direction;
+    private String representation;
 
-    protected Direction(String direction) {
-        this.direction = direction;
+    protected Direction(String representation) {
+        this.representation = representation;
     }
 
     public Direction rotateLeft() {
@@ -14,16 +14,16 @@ public class Direction {
         throw new IllegalStateException();
     }
 
-    public String getDirection() {
-        return direction;
+    public String getRepresentation() {
+        return representation;
     }
 
-    public static Direction create(String direction) {
-        if (direction.equals("N")) {
+    public static Direction create(String representation) {
+        if (representation.equals("N")) {
             return new North();
-        } else if (direction.equals("S")) {
+        } else if (representation.equals("S")) {
             return new South();
-        } else if (direction.equals("E")) {
+        } else if (representation.equals("E")) {
             return new East();
         }
 
@@ -37,14 +37,14 @@ public class Direction {
 
         Direction direction1 = (Direction) object;
 
-        if (direction != null ? !direction.equals(direction1.direction) : direction1.direction != null) return false;
+        if (representation != null ? !representation.equals(direction1.representation) : direction1.representation != null) return false;
 
         return true;
     }
 
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        result = 31 * result + (representation != null ? representation.hashCode() : 0);
         return result;
     }
 }
