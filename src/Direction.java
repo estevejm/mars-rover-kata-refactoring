@@ -2,7 +2,7 @@ public class Direction {
 
     private String direction;
 
-    public Direction(String direction) {
+    private Direction(String direction) {
         this.direction = direction;
     }
 

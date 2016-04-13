@@ -64,7 +64,7 @@ public class Rover {
 
     private void setDirection(String direction) {
         this.direction = direction;
-        this.directionType = new Direction(direction);
+        this.directionType = Direction.create(direction);
     }
 
     @Override
