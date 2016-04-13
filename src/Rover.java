@@ -1,7 +1,6 @@
 public class Rover {
 
-    private Direction directionType;
-    private String direction;
+    private Direction direction;
     private int y;
     private int x;
 
@@ -49,20 +48,19 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        setDirection(this.directionType.rotateLeft());
+        setDirection(this.direction.rotateLeft());
     }
 
     private void rotateRight() {
-        setDirection(this.directionType.rotateRight());
+        setDirection(this.direction.rotateRight());
     }
 
     private String getDirection() {
-        return directionType.getDirection();
+        return direction.getDirection();
     }
 
     private void setDirection(Direction direction) {
-        this.direction = direction.getDirection();
-        this.directionType = direction;
+        this.direction = direction;
     }
 
     @Override
