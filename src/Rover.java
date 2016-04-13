@@ -5,7 +5,7 @@ public class Rover {
     private int x;
 
     public Rover(int x, int y, String direction) {
-        this.direction = direction;
+        setDirection(direction);
         this.y = y;
         this.x = x;
     }
@@ -36,11 +36,11 @@ public class Rover {
         }
         int displacement = displacement1;
 
-        if (direction.equals("N")) {
+        if (getDirection().equals("N")) {
             y += displacement;
-        } else if (direction.equals("S")) {
+        } else if (getDirection().equals("S")) {
             y -= displacement;
-        } else if (direction.equals("W")) {
+        } else if (getDirection().equals("W")) {
             x -= displacement;
         } else {
             x += displacement;
@@ -48,27 +48,35 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        if (direction.equals("N")) {
-            direction = "W";
-        } else if (direction.equals("S")) {
-            direction = "E";
-        } else if (direction.equals("W")) {
-            direction = "S";
+        if (getDirection().equals("N")) {
+            setDirection("W");
+        } else if (getDirection().equals("S")) {
+            setDirection("E");
+        } else if (getDirection().equals("W")) {
+            setDirection("S");
         } else {
-            direction = "N";
+            setDirection("N");
         }
     }
 
     private void rotateRight() {
-        if (direction.equals("N")) {
-            direction = "E";
-        } else if (direction.equals("S")) {
-            direction = "W";
-        } else if (direction.equals("W")) {
-            direction = "N";
+        if (getDirection().equals("N")) {
+            setDirection("E");
+        } else if (getDirection().equals("S")) {
+            setDirection("W");
+        } else if (getDirection().equals("W")) {
+            setDirection("N");
         } else {
-            direction = "S";
+            setDirection("S");
         }
+    }
+
+    private String getDirection() {
+        return direction;
+    }
+
+    private void setDirection(String direction) {
+        this.direction = direction;
     }
 
     @Override
