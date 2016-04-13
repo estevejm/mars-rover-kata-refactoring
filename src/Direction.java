@@ -14,7 +14,7 @@ public class Direction {
         } else if (direction.equals("W")) {
             return Direction.create("S");
         } else {
-            return Direction.create("N");
+            throw new IllegalStateException();
         }
     }
 
@@ -26,7 +26,7 @@ public class Direction {
         } else if (direction.equals("W")) {
             return Direction.create("N");
         } else {
-            return Direction.create("S");
+            throw new IllegalStateException();
         }
     }
 
@@ -39,6 +39,8 @@ public class Direction {
             return new North();
         } else if (direction.equals("S")) {
             return new South();
+        } else if (direction.equals("E")) {
+            return new East();
         }
 
         return new Direction(direction);
