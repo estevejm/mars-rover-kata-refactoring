@@ -19,34 +19,31 @@ public class Rover {
     }
 
     private void interpretAndExecuteCommand(String command) {
-        if (command.equals("l") || command.equals("r")) {
+        if (command.equals("r")) {
 
             // Rotate Rover
             if (direction.equals("N")) {
-                if (command.equals("r")) {
-                    direction = "E";
-                } else {
-                    direction = "W";
-                }
+                direction = "E";
             } else if (direction.equals("S")) {
-                if (command.equals("r")) {
-                    direction = "W";
-                } else {
-                    direction = "E";
-                }
+                direction = "W";
             } else if (direction.equals("W")) {
-                if (command.equals("r")) {
-                    direction = "N";
-                } else {
-                    direction = "S";
-                }
+                direction = "N";
             } else {
-                if (command.equals("r")) {
+                direction = "S";
+            }
+        } else if (command.equals("l")) {
+
+                // Rotate Rover
+                if (direction.equals("N")) {
+                    direction = "W";
+                } else if (direction.equals("S")) {
+                    direction = "E";
+                } else if (direction.equals("W")) {
                     direction = "S";
                 } else {
                     direction = "N";
                 }
-            }
+
         } else {
 
             // Displace Rover
