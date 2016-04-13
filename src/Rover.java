@@ -20,49 +20,54 @@ public class Rover {
 
     private void interpretAndExecuteCommand(String command) {
         if (command.equals("r")) {
-
-            // Rotate Rover
-            if (direction.equals("N")) {
-                direction = "E";
-            } else if (direction.equals("S")) {
-                direction = "W";
-            } else if (direction.equals("W")) {
-                direction = "N";
-            } else {
-                direction = "S";
-            }
+            rotateRight();
         } else if (command.equals("l")) {
-
-                // Rotate Rover
-                if (direction.equals("N")) {
-                    direction = "W";
-                } else if (direction.equals("S")) {
-                    direction = "E";
-                } else if (direction.equals("W")) {
-                    direction = "S";
-                } else {
-                    direction = "N";
-                }
-
+            rotateLeft();
         } else {
+            displace(command);
+        }
+    }
 
-            // Displace Rover
-            int displacement1 = -1;
+    private void displace(String command) {
+        int displacement1 = -1;
 
-            if (command.equals("f")) {
-                displacement1 = 1;
-            }
-            int displacement = displacement1;
+        if (command.equals("f")) {
+            displacement1 = 1;
+        }
+        int displacement = displacement1;
 
-            if (direction.equals("N")) {
-                y += displacement;
-            } else if (direction.equals("S")) {
-                y -= displacement;
-            } else if (direction.equals("W")) {
-                x -= displacement;
-            } else {
-                x += displacement;
-            }
+        if (direction.equals("N")) {
+            y += displacement;
+        } else if (direction.equals("S")) {
+            y -= displacement;
+        } else if (direction.equals("W")) {
+            x -= displacement;
+        } else {
+            x += displacement;
+        }
+    }
+
+    private void rotateLeft() {
+        if (direction.equals("N")) {
+            direction = "W";
+        } else if (direction.equals("S")) {
+            direction = "E";
+        } else if (direction.equals("W")) {
+            direction = "S";
+        } else {
+            direction = "N";
+        }
+    }
+
+    private void rotateRight() {
+        if (direction.equals("N")) {
+            direction = "E";
+        } else if (direction.equals("S")) {
+            direction = "W";
+        } else if (direction.equals("W")) {
+            direction = "N";
+        } else {
+            direction = "S";
         }
     }
 
