@@ -10,7 +10,7 @@ public class Direction {
         if (direction.equals("N")) {
             throw new IllegalStateException();
         } else if (direction.equals("S")) {
-            return Direction.create("E");
+            throw new IllegalStateException();
         } else if (direction.equals("W")) {
             return Direction.create("S");
         } else {
@@ -22,7 +22,7 @@ public class Direction {
         if (direction.equals("N")) {
             throw new IllegalStateException();
         } else if (direction.equals("S")) {
-            return Direction.create("W");
+            throw new IllegalStateException();
         } else if (direction.equals("W")) {
             return Direction.create("N");
         } else {
@@ -37,6 +37,8 @@ public class Direction {
     public static Direction create(String direction) {
         if (direction.equals("N")) {
             return new North();
+        } else if (direction.equals("S")) {
+            return new South();
         }
 
         return new Direction(direction);
