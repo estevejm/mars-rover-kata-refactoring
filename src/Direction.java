@@ -6,27 +6,27 @@ public class Direction {
         setDirection(direction);
     }
 
-    public void rotateLeft() {
+    public Direction rotateLeft() {
         if (getDirection().equals("N")) {
-            setDirection("W");
+            return Direction.create("W");
         } else if (getDirection().equals("S")) {
-            setDirection("E");
+            return Direction.create("E");
         } else if (getDirection().equals("W")) {
-            setDirection("S");
+            return Direction.create("S");
         } else {
-            setDirection("N");
+            return Direction.create("N");
         }
     }
 
-    public void rotateRight() {
+    public Direction rotateRight() {
         if (getDirection().equals("N")) {
-            setDirection("E");
+            return Direction.create("E");
         } else if (getDirection().equals("S")) {
-            setDirection("W");
+            return Direction.create("W");
         } else if (getDirection().equals("W")) {
-            setDirection("N");
+            return Direction.create("N");
         } else {
-            setDirection("S");
+            return Direction.create("S");
         }
     }
 
@@ -36,6 +36,10 @@ public class Direction {
 
     private void setDirection(String direction) {
         this.direction = direction;
+    }
+
+    public static Direction create(String direction) {
+        return new Direction(direction);
     }
 
     public boolean equals(Object object) {

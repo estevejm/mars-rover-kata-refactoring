@@ -49,13 +49,13 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        this.directionType.rotateLeft();
-        setDirection(this.directionType.getDirection());
+        Direction newDirection = this.directionType.rotateLeft();
+        setDirection(newDirection.getDirection());
     }
 
     private void rotateRight() {
-        this.directionType.rotateRight();
-        setDirection(this.directionType.getDirection());
+        Direction newDirection = this.directionType.rotateRight();
+        setDirection(newDirection.getDirection());
     }
 
     private String getDirection() {
