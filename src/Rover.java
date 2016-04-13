@@ -78,10 +78,10 @@ public class Rover {
 
         Rover other = (Rover) obj;
 
-        if (direction == null) {
-            if (other.direction != null)
+        if (getDirection() == null) {
+            if (other.getDirection() != null)
                 return false;
-        } else if (!direction.equals(other.direction))
+        } else if (!getDirection().equals(other.getDirection()))
             return false;
 
         if (x != other.x)
