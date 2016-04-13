@@ -7,27 +7,11 @@ public class Direction {
     }
 
     public Direction rotateLeft() {
-        if (direction.equals("N")) {
-            throw new IllegalStateException();
-        } else if (direction.equals("S")) {
-            throw new IllegalStateException();
-        } else if (direction.equals("W")) {
-            return Direction.create("S");
-        } else {
-            throw new IllegalStateException();
-        }
+        throw new IllegalStateException();
     }
 
     public Direction rotateRight() {
-        if (direction.equals("N")) {
-            throw new IllegalStateException();
-        } else if (direction.equals("S")) {
-            throw new IllegalStateException();
-        } else if (direction.equals("W")) {
-            return Direction.create("N");
-        } else {
-            throw new IllegalStateException();
-        }
+        throw new IllegalStateException();
     }
 
     public String getDirection() {
@@ -43,7 +27,7 @@ public class Direction {
             return new East();
         }
 
-        return new Direction(direction);
+        return new West();
     }
 
     public boolean equals(Object object) {
