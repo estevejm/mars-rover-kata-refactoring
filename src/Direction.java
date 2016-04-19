@@ -1,4 +1,4 @@
-public class Direction {
+public abstract class Direction {
 
     private String representation;
 
@@ -6,13 +6,9 @@ public class Direction {
         this.representation = representation;
     }
 
-    public Direction rotateLeft() {
-        throw new IllegalStateException();
-    }
+    public abstract Direction rotateLeft();
 
-    public Direction rotateRight() {
-        throw new IllegalStateException();
-    }
+    public abstract Direction rotateRight();
 
     public static Direction create(String representation) {
         if (representation.equals("N")) {
