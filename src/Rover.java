@@ -21,14 +21,7 @@ public class Rover {
             rotateRight();
         } else if (command.equals("l")) {
             rotateLeft();
-        } else {
-            displace(command);
-        }
-    }
-
-    private void displace(String command) {
-
-        if (command.equals("f")) {
+        } else if (command.equals("f")) {
             moveForward();
         } else {
             moveBackwards();
