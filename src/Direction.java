@@ -10,13 +10,9 @@ public abstract class Direction {
 
     public abstract Direction rotateRight();
 
-    public Point moveForward(Point point) {
-        throw new RuntimeException("This could should not be reached");
-    }
+    public abstract Point moveForward(Point point);
 
-    public Point moveBackwards(Point point) {
-        throw new RuntimeException("This could should not be reached");
-    }
+    public abstract Point moveBackwards(Point point);
 
     public static Direction create(String representation) {
         if (representation.equals("N")) {

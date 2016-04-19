@@ -11,12 +11,10 @@ public class North extends Direction {
         return Direction.create("E");
     }
 
-    @Override
     public Point moveForward(Point point) {
         return point.moveNorth();
     }
 
-    @Override
     public Point moveBackwards(Point point) {
         return point.moveSouth();
     }
