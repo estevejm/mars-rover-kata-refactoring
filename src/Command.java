@@ -1,9 +1,4 @@
 public abstract class Command {
-    private final String value;
-
-    protected Command(String value) {
-        this.value = value;
-    }
 
     public abstract Vector executeCommand(Vector vector);
 
@@ -17,28 +12,5 @@ public abstract class Command {
         }
 
         return new MoveBackwards();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Command command = (Command) o;
-
-        return value != null ? value.equals(command.value) : command.value == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return value != null ? value.hashCode() : 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Command{" +
-                "value='" + value + '\'' +
-                '}';
     }
 }
