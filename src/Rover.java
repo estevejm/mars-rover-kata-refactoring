@@ -7,7 +7,12 @@ public class Rover {
     }
 
     public void receive(String commandsSequence) {
-        CommandSequence.create(commandsSequence);
+        CommandSequence sequence = CommandSequence.create(commandsSequence);
+
+        for (Command command: sequence) {
+
+        }
+
         for (int i = 0; i < commandsSequence.length(); ++i) {
             Command command = parseCommand(commandsSequence, i);
             executeCommand(command);

@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
-public class CommandSequence {
+public class CommandSequence implements Iterable<Command> {
     private ArrayList<Command> commands;
 
     public CommandSequence(ArrayList<Command> commands) {
@@ -15,5 +18,20 @@ public class CommandSequence {
         }
 
         return new CommandSequence(commands);
+    }
+
+    @Override
+    public Iterator<Command> iterator() {
+        return this.commands.iterator();
+    }
+
+    @Override
+    public void forEach(Consumer<? super Command> action) {
+        this.commands.forEach(action);
+    }
+
+    @Override
+    public Spliterator<Command> spliterator() {
+        return this.commands.spliterator();
     }
 }
