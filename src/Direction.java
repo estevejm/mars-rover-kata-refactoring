@@ -12,25 +12,25 @@ public abstract class Direction {
 
     public Point moveForward(Point point) {
         if (this.equals(Direction.create("N"))) {
-            return point.moveNorth();
+            throw new RuntimeException("This could should not be reached");
         } else if (this.equals(Direction.create("S"))) {
-            return point.moveSouth();
+            throw new RuntimeException("This could should not be reached");
         } else if (this.equals(Direction.create("W"))) {
             return point.moveWest();
         } else {
-            return point.moveEast();
+            throw new RuntimeException("This could should not be reached");
         }
     }
 
     public Point moveBackwards(Point point) {
         if (this.equals(Direction.create("N"))) {
-            return point.moveSouth();
+            throw new RuntimeException("This could should not be reached");
         } else if (this.equals(Direction.create("S"))) {
-            return point.moveNorth();
+            throw new RuntimeException("This could should not be reached");
         } else if (this.equals(Direction.create("W"))) {
             return point.moveEast();
         } else {
-            return point.moveWest();
+            throw new RuntimeException("This could should not be reached");
         }
     }
 
