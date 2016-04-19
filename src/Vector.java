@@ -33,19 +33,19 @@ public class Vector {
     }
 
     private void moveEast() {
-        point.setX(point.getX() + 1);
+        point.moveEast();
     }
 
     private void moveWest() {
-        point.setX(point.getX() - 1);
+        point.moveWest();
     }
 
     private void moveSouth() {
-        point.setY(point.getY() - 1);
+        point.moveSouth();
     }
 
     private void moveNorth() {
-        point.setY(point.getY() + 1);
+        point.moveNorth();
     }
 
     public void rotateLeft() {
