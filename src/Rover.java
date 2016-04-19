@@ -19,30 +19,14 @@ public class Rover {
 
     private void interpretAndExecuteCommand(Command command) {
         if (command.equals(Command.create("r"))) {
-            rotateRight();
+            this.vector.rotateRight();
         } else if (command.equals(Command.create("l"))) {
-            rotateLeft();
+            this.vector.rotateLeft();
         } else if (command.equals(Command.create("f"))) {
-            moveForward();
+            this.vector.moveForward();
         } else {
-            moveBackwards();
+            this.vector.moveBackwards();
         }
-    }
-
-    private void moveBackwards() {
-        this.vector.moveBackwards();
-    }
-
-    private void moveForward() {
-        this.vector.moveForward();
-    }
-
-    private void rotateLeft() {
-        this.vector.rotateLeft();
-    }
-
-    private void rotateRight() {
-        this.vector.rotateRight();
     }
 
     @Override
