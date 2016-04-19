@@ -1,8 +1,6 @@
 public class Rover {
 
     private Direction direction;
-    private int y;
-    private int x;
     private Point typedPoint;
 
     public Rover(int x, int y, String direction) {
@@ -66,19 +64,19 @@ public class Rover {
     }
 
     public int getY() {
-        return y;
+        return typedPoint.getY();
     }
 
     public void setY(int y) {
-        this.y = y;
+        this.typedPoint.setY(y);
     }
 
     public int getX() {
-        return x;
+        return typedPoint.getX();
     }
 
     public void setX(int x) {
-        this.x = x;
+        this.typedPoint.setX(x);
     }
 
     @Override
