@@ -8,6 +8,22 @@ public class Point {
         this.y = y;
     }
 
+    public void moveEast() {
+        this.x += 1;
+    }
+
+    public void moveWest() {
+        this.x -= 1;
+    }
+
+    public void moveSouth() {
+        this.y -= 1;
+    }
+
+    public void moveNorth() {
+        this.y += 1;
+    }
+
     public void setX(int x) {
         this.x = x;
     }

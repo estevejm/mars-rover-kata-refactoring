@@ -14,7 +14,7 @@ public class Vector {
         } else if (direction.equals(Direction.create("S"))) {
             moveNorth();
         } else if (direction.equals(Direction.create("W"))) {
-            point.setX(point.getX() + 1);
+            moveEast();
         } else {
             moveWest();
         }
