@@ -18,15 +18,7 @@ public class Rover {
     }
 
     private void interpretAndExecuteCommand(Command command) {
-        if (command.equals(Command.create("r"))) {
-            this.vector.rotateRight();
-        } else if (command.equals(Command.create("l"))) {
-            this.vector.rotateLeft();
-        } else if (command.equals(Command.create("f"))) {
-            this.vector.moveForward();
-        } else {
-            this.vector.moveBackwards();
-        }
+        vector = command.executeCommand(vector);
     }
 
     @Override
