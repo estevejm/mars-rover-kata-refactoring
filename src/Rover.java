@@ -1,11 +1,11 @@
 public class Rover {
 
     private Direction direction;
-    private Point typedPoint;
+    private Point point;
 
     public Rover(int x, int y, String direction) {
         setDirection(Direction.create(direction));
-        this.typedPoint = new Point(x,y);
+        this.point = new Point(x,y);
     }
 
     public void receive(String commandsSequence) {
@@ -35,13 +35,13 @@ public class Rover {
         int displacement = displacement1;
 
         if (getDirection().equals("N")) {
-            typedPoint.setY(typedPoint.getY() + displacement);
+            point.setY(point.getY() + displacement);
         } else if (getDirection().equals("S")) {
-            typedPoint.setY(typedPoint.getY() - displacement);
+            point.setY(point.getY() - displacement);
         } else if (getDirection().equals("W")) {
-            typedPoint.setX(typedPoint.getX() - displacement);
+            point.setX(point.getX() - displacement);
         } else {
-            typedPoint.setX(typedPoint.getX() + displacement);
+            point.setX(point.getX() + displacement);
         }
     }
 
@@ -69,14 +69,14 @@ public class Rover {
         Rover rover = (Rover) o;
 
         if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
-        return typedPoint != null ? typedPoint.equals(rover.typedPoint) : rover.typedPoint == null;
+        return point != null ? point.equals(rover.point) : rover.point == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = direction != null ? direction.hashCode() : 0;
-        result = 31 * result + (typedPoint != null ? typedPoint.hashCode() : 0);
+        result = 31 * result + (point != null ? point.hashCode() : 0);
         return result;
     }
 
@@ -84,7 +84,7 @@ public class Rover {
     public String toString() {
         return "Rover{" +
                 "direction=" + direction +
-                ", typedPoint=" + typedPoint +
+                ", point=" + point +
                 '}';
     }
 }
