@@ -27,12 +27,11 @@ public class Rover {
     }
 
     private void displace(String command) {
-        int displacement1 = -1;
+        int displacement = -1;
 
         if (command.equals("f")) {
-            displacement1 = 1;
+            displacement = 1;
         }
-        int displacement = displacement1;
 
         if (direction.equals(Direction.create("N"))) {
             point.setY(point.getY() + displacement);
