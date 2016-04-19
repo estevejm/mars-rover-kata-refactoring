@@ -31,35 +31,19 @@ public class Rover {
     }
 
     private void moveBackwards() {
-        if (direction.equals(Direction.create("N"))) {
-            point.setY(point.getY() - 1);
-        } else if (direction.equals(Direction.create("S"))) {
-            point.setY(point.getY() + 1);
-        } else if (direction.equals(Direction.create("W"))) {
-            point.setX(point.getX() + 1);
-        } else {
-            point.setX(point.getX() - 1);
-        }
+        this.vector.moveBackwards();
     }
 
     private void moveForward() {
-        if (direction.equals(Direction.create("N"))) {
-            point.setY(point.getY() + 1);
-        } else if (direction.equals(Direction.create("S"))) {
-            point.setY(point.getY() - 1);
-        } else if (direction.equals(Direction.create("W"))) {
-            point.setX(point.getX() - 1);
-        } else {
-            point.setX(point.getX() + 1);
-        }
+        this.vector.moveForward();
     }
 
     private void rotateLeft() {
-        this.direction = this.direction.rotateLeft();
+        this.vector.rotateLeft();
     }
 
     private void rotateRight() {
-        this.direction = this.direction.rotateRight();
+        this.vector.rotateRight();
     }
 
     @Override
@@ -69,16 +53,13 @@ public class Rover {
 
         Rover rover = (Rover) o;
 
-        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
-        return point != null ? point.equals(rover.point) : rover.point == null;
+        return vector != null ? vector.equals(rover.vector) : rover.vector == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = direction != null ? direction.hashCode() : 0;
-        result = 31 * result + (point != null ? point.hashCode() : 0);
-        return result;
+        return vector != null ? vector.hashCode() : 0;
     }
 
     @Override
