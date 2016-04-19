@@ -10,12 +10,7 @@ public class Rover {
         CommandSequence sequence = CommandSequence.create(commandsSequence);
 
         for (Command command: sequence) {
-
-        }
-
-        for (int i = 0; i < commandsSequence.length(); ++i) {
-            Command command = parseCommand(commandsSequence, i);
-            executeCommand(command);
+            vector = command.executeCommand(vector);
         }
     }
 
