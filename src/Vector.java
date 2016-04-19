@@ -10,26 +10,42 @@ public class Vector {
 
     public void moveBackwards() {
         if (direction.equals(Direction.create("N"))) {
-            point.setY(point.getY() - 1);
+            moveSouth();
         } else if (direction.equals(Direction.create("S"))) {
-            point.setY(point.getY() + 1);
+            moveNorth();
         } else if (direction.equals(Direction.create("W"))) {
             point.setX(point.getX() + 1);
         } else {
-            point.setX(point.getX() - 1);
+            moveWest();
         }
     }
 
     public void moveForward() {
         if (direction.equals(Direction.create("N"))) {
-            point.setY(point.getY() + 1);
+            moveNorth();
         } else if (direction.equals(Direction.create("S"))) {
-            point.setY(point.getY() - 1);
+            moveSouth();
         } else if (direction.equals(Direction.create("W"))) {
-            point.setX(point.getX() - 1);
+            moveWest();
         } else {
-            point.setX(point.getX() + 1);
+            moveEast();
         }
+    }
+
+    private void moveEast() {
+        point.setX(point.getX() + 1);
+    }
+
+    private void moveWest() {
+        point.setX(point.getX() - 1);
+    }
+
+    private void moveSouth() {
+        point.setY(point.getY() - 1);
+    }
+
+    private void moveNorth() {
+        point.setY(point.getY() + 1);
     }
 
     public void rotateLeft() {
