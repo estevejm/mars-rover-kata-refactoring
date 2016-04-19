@@ -14,14 +14,6 @@ public class Rover {
         }
     }
 
-    private Command parseCommand(String commandsSequence, int i) {
-        return Command.create(commandsSequence.substring(i, i + 1));
-    }
-
-    private void executeCommand(Command command) {
-        vector = command.executeCommand(vector);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
