@@ -8,10 +8,13 @@ public class Rover {
 
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
-            String command = commandsSequence.substring(i, i + 1);
-
+            String command = parseCommand(commandsSequence, i);
             interpretAndExecuteCommand(command);
         }
+    }
+
+    private String parseCommand(String commandsSequence, int i) {
+        return commandsSequence.substring(i, i + 1);
     }
 
     private void interpretAndExecuteCommand(String command) {
