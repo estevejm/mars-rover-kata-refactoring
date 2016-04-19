@@ -9,7 +9,7 @@ public class Command {
         if (this.equals(Command.create("r"))) {
             throw new RuntimeException("Not supposed to be here");
         } else if (this.equals(Command.create("l"))) {
-            return vector.rotateLeft();
+            throw new RuntimeException("Not supposed to be here");
         } else if (this.equals(Command.create("f"))) {
             return vector.moveForward();
         } else {
@@ -20,6 +20,8 @@ public class Command {
     public static Command create(String value) {
         if (value.equals("r")) {
             return new RotateRight();
+        } else if (value.equals("l")) {
+            return new RotateLeft();
         }
 
         return new Command(value);
