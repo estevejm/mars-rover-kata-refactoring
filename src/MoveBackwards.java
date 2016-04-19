@@ -6,7 +6,6 @@ public class MoveBackwards extends Command {
         super("b");
     }
 
-    @Override
     public Vector executeCommand(Vector vector) {
         return vector.moveBackwards();
     }

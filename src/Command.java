@@ -1,13 +1,11 @@
-public class Command {
+public abstract class Command {
     private final String value;
 
     protected Command(String value) {
         this.value = value;
     }
 
-    public Vector executeCommand(Vector vector) {
-        throw new RuntimeException("Not supposed to be here");
-    }
+    public abstract Vector executeCommand(Vector vector);
 
     public static Command create(String value) {
         if (value.equals("r")) {

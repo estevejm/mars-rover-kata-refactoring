@@ -6,7 +6,6 @@ public class MoveForward extends Command {
         super("f");
     }
 
-    @Override
     public Vector executeCommand(Vector vector) {
         return vector.moveForward();
     }

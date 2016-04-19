@@ -6,7 +6,6 @@ public class RotateLeft extends Command {
         super("l");
     }
 
-    @Override
     public Vector executeCommand(Vector vector) {
         return vector.rotateLeft();
     }
