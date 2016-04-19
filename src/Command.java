@@ -6,15 +6,7 @@ public class Command {
     }
 
     public Vector executeCommand(Vector vector) {
-        if (this.equals(Command.create("r"))) {
-            throw new RuntimeException("Not supposed to be here");
-        } else if (this.equals(Command.create("l"))) {
-            throw new RuntimeException("Not supposed to be here");
-        } else if (this.equals(Command.create("f"))) {
-            throw new RuntimeException("Not supposed to be here");
-        } else {
-            return vector.moveBackwards();
-        }
+        throw new RuntimeException("Not supposed to be here");
     }
 
     public static Command create(String value) {
@@ -26,7 +18,7 @@ public class Command {
             return new MoveForward();
         }
 
-        return new Command(value);
+        return new MoveBackwards();
     }
 
     @Override
