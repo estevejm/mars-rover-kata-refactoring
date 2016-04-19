@@ -10,6 +10,34 @@ public abstract class Direction {
 
     public abstract Direction rotateRight();
 
+    public Point moveForward(Point point) {
+        if (this.equals(Direction.create("N"))) {
+            point.moveNorth();
+        } else if (this.equals(Direction.create("S"))) {
+            point.moveSouth();
+        } else if (this.equals(Direction.create("W"))) {
+            point.moveWest();
+        } else {
+            point.moveEast();
+        }
+
+        return point;
+    }
+
+    public Point moveBackwards(Point point) {
+        if (this.equals(Direction.create("N"))) {
+            point.moveSouth();
+        } else if (this.equals(Direction.create("S"))) {
+            point.moveNorth();
+        } else if (this.equals(Direction.create("W"))) {
+            point.moveEast();
+        } else {
+            point.moveWest();
+        }
+
+        return point;
+    }
+
     public static Direction create(String representation) {
         if (representation.equals("N")) {
             return new North();

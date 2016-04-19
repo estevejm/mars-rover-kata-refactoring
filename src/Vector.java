@@ -9,27 +9,11 @@ public class Vector {
     }
 
     public void moveBackwards() {
-        if (direction.equals(Direction.create("N"))) {
-            point.moveSouth();
-        } else if (direction.equals(Direction.create("S"))) {
-            point.moveNorth();
-        } else if (direction.equals(Direction.create("W"))) {
-            point.moveEast();
-        } else {
-            point.moveWest();
-        }
+        this.point = direction.moveBackwards(this.point);
     }
 
     public void moveForward() {
-        if (direction.equals(Direction.create("N"))) {
-            point.moveNorth();
-        } else if (direction.equals(Direction.create("S"))) {
-            point.moveSouth();
-        } else if (direction.equals(Direction.create("W"))) {
-            point.moveWest();
-        } else {
-            point.moveEast();
-        }
+        this.point = direction.moveForward(this.point);
     }
 
     public void rotateLeft() {
