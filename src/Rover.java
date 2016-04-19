@@ -4,7 +4,7 @@ public class Rover {
     private Point point;
 
     public Rover(int x, int y, String direction) {
-        setDirection(Direction.create(direction));
+        this.direction = Direction.create(direction);
         this.point = new Point(x,y);
     }
 
@@ -34,11 +34,11 @@ public class Rover {
         }
         int displacement = displacement1;
 
-        if (getDirection().equals("N")) {
+        if (direction.getRepresentation().equals("N")) {
             point.setY(point.getY() + displacement);
-        } else if (getDirection().equals("S")) {
+        } else if (direction.getRepresentation().equals("S")) {
             point.setY(point.getY() - displacement);
-        } else if (getDirection().equals("W")) {
+        } else if (direction.getRepresentation().equals("W")) {
             point.setX(point.getX() - displacement);
         } else {
             point.setX(point.getX() + displacement);
@@ -46,19 +46,11 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        setDirection(this.direction.rotateLeft());
+        this.direction = this.direction.rotateLeft();
     }
 
     private void rotateRight() {
-        setDirection(this.direction.rotateRight());
-    }
-
-    private String getDirection() {
-        return direction.getRepresentation();
-    }
-
-    private void setDirection(Direction direction) {
-        this.direction = direction;
+        this.direction = this.direction.rotateRight();
     }
 
     @Override
