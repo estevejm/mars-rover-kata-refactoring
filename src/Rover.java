@@ -3,11 +3,13 @@ public class Rover {
     private Direction direction;
     private int y;
     private int x;
+    private Point typedPoint;
 
     public Rover(int x, int y, String direction) {
         setDirection(Direction.create(direction));
-        this.y = y;
-        this.x = x;
+        this.typedPoint = new Point(x,y);
+        this.setY(y);
+        this.setX(x);
     }
 
     public void receive(String commandsSequence) {
@@ -37,13 +39,13 @@ public class Rover {
         int displacement = displacement1;
 
         if (getDirection().equals("N")) {
-            y += displacement;
+            setY(getY() + displacement);
         } else if (getDirection().equals("S")) {
-            y -= displacement;
+            setY(getY() - displacement);
         } else if (getDirection().equals("W")) {
-            x -= displacement;
+            setX(getX() - displacement);
         } else {
-            x += displacement;
+            setX(getX() + displacement);
         }
     }
 
@@ -61,6 +63,22 @@ public class Rover {
 
     private void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
     }
 
     @Override
@@ -82,10 +100,10 @@ public class Rover {
         } else if (!getDirection().equals(other.getDirection()))
             return false;
 
-        if (x != other.x)
+        if (getX() != other.getX())
             return false;
 
-        if (y != other.y)
+        if (getY() != other.getY())
             return false;
 
         return true;
