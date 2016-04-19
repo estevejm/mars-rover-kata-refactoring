@@ -9,7 +9,7 @@ public class Rover {
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             Command command = parseCommand(commandsSequence, i);
-            interpretAndExecuteCommand(command);
+            executeCommand(command);
         }
     }
 
@@ -17,7 +17,7 @@ public class Rover {
         return Command.create(commandsSequence.substring(i, i + 1));
     }
 
-    private void interpretAndExecuteCommand(Command command) {
+    private void executeCommand(Command command) {
         vector = command.executeCommand(vector);
     }
 
