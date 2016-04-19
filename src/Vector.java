@@ -8,20 +8,28 @@ public class Vector {
         this.direction = direction;
     }
 
-    public void moveBackwards() {
-        this.point = direction.moveBackwards(this.point);
+    public Vector moveBackwards() {
+        Point newPoint = direction.moveBackwards(point);
+
+        return new Vector(newPoint, direction);
     }
 
-    public void moveForward() {
-        this.point = direction.moveForward(this.point);
+    public Vector moveForward() {
+        Point newPoint = direction.moveForward(this.point);
+
+        return new Vector(newPoint, direction);
     }
 
-    public void rotateLeft() {
-        this.direction = this.direction.rotateLeft();
+    public Vector rotateLeft() {
+        Direction newDirection = this.direction.rotateLeft();
+
+        return new Vector(point, newDirection);
     }
 
-    public void rotateRight() {
-        this.direction = this.direction.rotateRight();
+    public Vector rotateRight() {
+        Direction newDirection = this.direction.rotateRight();
+
+        return new Vector(point, newDirection);
     }
 
     @Override

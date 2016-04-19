@@ -9,14 +9,12 @@ public class Command {
         if (this.equals(Command.create("r"))) {
             throw new RuntimeException("Not supposed to be here");
         } else if (this.equals(Command.create("l"))) {
-            vector.rotateLeft();
+            return vector.rotateLeft();
         } else if (this.equals(Command.create("f"))) {
-            vector.moveForward();
+            return vector.moveForward();
         } else {
-            vector.moveBackwards();
+            return vector.moveBackwards();
         }
-
-        return vector;
     }
 
     public static Command create(String value) {

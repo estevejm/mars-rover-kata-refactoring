@@ -6,8 +6,6 @@ public class RotateRight extends Command {
 
     @Override
     public Vector executeCommand(Vector vector) {
-        vector.rotateRight();
-
-        return vector;
+        return vector.rotateRight();
     }
 }
