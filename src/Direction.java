@@ -12,30 +12,26 @@ public abstract class Direction {
 
     public Point moveForward(Point point) {
         if (this.equals(Direction.create("N"))) {
-            point.moveNorth();
+            return point.moveNorth();
         } else if (this.equals(Direction.create("S"))) {
-            point.moveSouth();
+            return point.moveSouth();
         } else if (this.equals(Direction.create("W"))) {
-            point.moveWest();
+            return point.moveWest();
         } else {
-            point.moveEast();
+            return point.moveEast();
         }
-
-        return point;
     }
 
     public Point moveBackwards(Point point) {
         if (this.equals(Direction.create("N"))) {
-            point.moveSouth();
+            return point.moveSouth();
         } else if (this.equals(Direction.create("S"))) {
-            point.moveNorth();
+            return point.moveNorth();
         } else if (this.equals(Direction.create("W"))) {
-            point.moveEast();
+            return point.moveEast();
         } else {
-            point.moveWest();
+            return point.moveWest();
         }
-
-        return point;
     }
 
     public static Direction create(String representation) {

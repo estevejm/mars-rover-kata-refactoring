@@ -8,20 +8,20 @@ public class Point {
         this.y = y;
     }
 
-    public void moveEast() {
-        this.x += 1;
+    public Point moveEast() {
+        return new Point(x + 1, y);
     }
 
-    public void moveWest() {
-        this.x -= 1;
+    public Point moveWest() {
+        return new Point(x - 1, y);
     }
 
-    public void moveSouth() {
-        this.y -= 1;
+    public Point moveSouth() {
+        return new Point(x, y - 1);
     }
 
-    public void moveNorth() {
-        this.y += 1;
+    public Point moveNorth() {
+        return new Point(x , y + 1);
     }
 
     @Override
