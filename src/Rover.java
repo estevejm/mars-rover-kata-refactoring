@@ -8,21 +8,21 @@ public class Rover {
 
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
-            String command = parseCommand(commandsSequence, i);
+            Command command = parseCommand(commandsSequence, i);
             interpretAndExecuteCommand(command);
         }
     }
 
-    private String parseCommand(String commandsSequence, int i) {
-        return commandsSequence.substring(i, i + 1);
+    private Command parseCommand(String commandsSequence, int i) {
+        return new Command(commandsSequence.substring(i, i + 1));
     }
 
-    private void interpretAndExecuteCommand(String command) {
-        if (command.equals("r")) {
+    private void interpretAndExecuteCommand(Command command) {
+        if (command.getValue().equals("r")) {
             rotateRight();
-        } else if (command.equals("l")) {
+        } else if (command.getValue().equals("l")) {
             rotateLeft();
-        } else if (command.equals("f")) {
+        } else if (command.getValue().equals("f")) {
             moveForward();
         } else {
             moveBackwards();
