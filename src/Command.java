@@ -1,16 +1,13 @@
-/**
- * Created by ejulimelis on 19/04/16.
- */
 public class Command {
     private final String value;
 
-    private Command(String value) {
+    protected Command(String value) {
         this.value = value;
     }
 
     public Vector executeCommand(Vector vector) {
         if (this.equals(Command.create("r"))) {
-            vector.rotateRight();
+            throw new RuntimeException("Not supposed to be here");
         } else if (this.equals(Command.create("l"))) {
             vector.rotateLeft();
         } else if (this.equals(Command.create("f"))) {
@@ -23,6 +20,10 @@ public class Command {
     }
 
     public static Command create(String value) {
+        if (value.equals("r")) {
+            return new RotateRight();
+        }
+
         return new Command(value);
     }
 
