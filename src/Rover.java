@@ -14,15 +14,15 @@ public class Rover {
     }
 
     private Command parseCommand(String commandsSequence, int i) {
-        return new Command(commandsSequence.substring(i, i + 1));
+        return Command.create(commandsSequence.substring(i, i + 1));
     }
 
     private void interpretAndExecuteCommand(Command command) {
-        if (command.equals(new Command("r"))) {
+        if (command.equals(Command.create("r"))) {
             rotateRight();
-        } else if (command.equals(new Command("l"))) {
+        } else if (command.equals(Command.create("l"))) {
             rotateLeft();
-        } else if (command.equals(new Command("f"))) {
+        } else if (command.equals(Command.create("f"))) {
             moveForward();
         } else {
             moveBackwards();

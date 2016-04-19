@@ -4,8 +4,12 @@
 public class Command {
     private final String value;
 
-    public Command(String value) {
+    private Command(String value) {
         this.value = value;
+    }
+
+    public static Command create(String value) {
+        return new Command(value);
     }
 
     @Override
