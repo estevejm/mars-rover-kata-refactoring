@@ -8,6 +8,20 @@ public class Command {
         this.value = value;
     }
 
+    public Vector executeCommand(Vector vector) {
+        if (this.equals(Command.create("r"))) {
+            vector.rotateRight();
+        } else if (this.equals(Command.create("l"))) {
+            vector.rotateLeft();
+        } else if (this.equals(Command.create("f"))) {
+            vector.moveForward();
+        } else {
+            vector.moveBackwards();
+        }
+
+        return vector;
+    }
+
     public static Command create(String value) {
         return new Command(value);
     }
