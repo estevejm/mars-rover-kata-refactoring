@@ -14,10 +14,6 @@ public class Direction {
         throw new IllegalStateException();
     }
 
-    public String getRepresentation() {
-        return representation;
-    }
-
     public static Direction create(String representation) {
         if (representation.equals("N")) {
             return new North();

@@ -34,11 +34,11 @@ public class Rover {
         }
         int displacement = displacement1;
 
-        if (direction.getRepresentation().equals("N")) {
+        if (direction.equals(Direction.create("N"))) {
             point.setY(point.getY() + displacement);
-        } else if (direction.getRepresentation().equals("S")) {
+        } else if (direction.equals(Direction.create("S"))) {
             point.setY(point.getY() - displacement);
-        } else if (direction.getRepresentation().equals("W")) {
+        } else if (direction.equals(Direction.create("W"))) {
             point.setX(point.getX() - displacement);
         } else {
             point.setX(point.getX() + displacement);
