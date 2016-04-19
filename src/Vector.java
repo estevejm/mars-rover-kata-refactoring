@@ -62,4 +62,12 @@ public class Vector {
         result = 31 * result + (point != null ? point.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Vector{" +
+                "direction=" + direction +
+                ", point=" + point +
+                '}';
+    }
 }
