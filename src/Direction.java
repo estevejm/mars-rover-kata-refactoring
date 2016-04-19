@@ -11,27 +11,11 @@ public abstract class Direction {
     public abstract Direction rotateRight();
 
     public Point moveForward(Point point) {
-        if (this.equals(Direction.create("N"))) {
-            throw new RuntimeException("This could should not be reached");
-        } else if (this.equals(Direction.create("S"))) {
-            throw new RuntimeException("This could should not be reached");
-        } else if (this.equals(Direction.create("W"))) {
-            return point.moveWest();
-        } else {
-            throw new RuntimeException("This could should not be reached");
-        }
+        throw new RuntimeException("This could should not be reached");
     }
 
     public Point moveBackwards(Point point) {
-        if (this.equals(Direction.create("N"))) {
-            throw new RuntimeException("This could should not be reached");
-        } else if (this.equals(Direction.create("S"))) {
-            throw new RuntimeException("This could should not be reached");
-        } else if (this.equals(Direction.create("W"))) {
-            return point.moveEast();
-        } else {
-            throw new RuntimeException("This could should not be reached");
-        }
+        throw new RuntimeException("This could should not be reached");
     }
 
     public static Direction create(String representation) {
