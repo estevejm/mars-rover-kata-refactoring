@@ -11,7 +11,7 @@ public class Command {
         } else if (this.equals(Command.create("l"))) {
             throw new RuntimeException("Not supposed to be here");
         } else if (this.equals(Command.create("f"))) {
-            return vector.moveForward();
+            throw new RuntimeException("Not supposed to be here");
         } else {
             return vector.moveBackwards();
         }
@@ -22,6 +22,8 @@ public class Command {
             return new RotateRight();
         } else if (value.equals("l")) {
             return new RotateLeft();
+        } else if (value.equals("f")) {
+            return new MoveForward();
         }
 
         return new Command(value);
