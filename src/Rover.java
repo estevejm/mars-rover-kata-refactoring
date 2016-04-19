@@ -29,25 +29,33 @@ public class Rover {
     private void displace(String command) {
 
         if (command.equals("f")) {
-            if (direction.equals(Direction.create("N"))) {
-                point.setY(point.getY() + 1);
-            } else if (direction.equals(Direction.create("S"))) {
-                point.setY(point.getY() - 1);
-            } else if (direction.equals(Direction.create("W"))) {
-                point.setX(point.getX() - 1);
-            } else {
-                point.setX(point.getX() + 1);
-            }
+            moveForward();
         } else {
-            if (direction.equals(Direction.create("N"))) {
-                point.setY(point.getY() - 1);
-            } else if (direction.equals(Direction.create("S"))) {
-                point.setY(point.getY() + 1);
-            } else if (direction.equals(Direction.create("W"))) {
-                point.setX(point.getX() + 1);
-            } else {
-                point.setX(point.getX() - 1);
-            }
+            moveBackwards();
+        }
+    }
+
+    private void moveBackwards() {
+        if (direction.equals(Direction.create("N"))) {
+            point.setY(point.getY() - 1);
+        } else if (direction.equals(Direction.create("S"))) {
+            point.setY(point.getY() + 1);
+        } else if (direction.equals(Direction.create("W"))) {
+            point.setX(point.getX() + 1);
+        } else {
+            point.setX(point.getX() - 1);
+        }
+    }
+
+    private void moveForward() {
+        if (direction.equals(Direction.create("N"))) {
+            point.setY(point.getY() + 1);
+        } else if (direction.equals(Direction.create("S"))) {
+            point.setY(point.getY() - 1);
+        } else if (direction.equals(Direction.create("W"))) {
+            point.setX(point.getX() - 1);
+        } else {
+            point.setX(point.getX() + 1);
         }
     }
 
