@@ -6,8 +6,6 @@ public class Rover {
     public Rover(int x, int y, String direction) {
         setDirection(Direction.create(direction));
         this.typedPoint = new Point(x,y);
-        this.setY(y);
-        this.setX(x);
     }
 
     public void receive(String commandsSequence) {
@@ -37,13 +35,13 @@ public class Rover {
         int displacement = displacement1;
 
         if (getDirection().equals("N")) {
-            setY(getY() + displacement);
+            typedPoint.setY(typedPoint.getY() + displacement);
         } else if (getDirection().equals("S")) {
-            setY(getY() - displacement);
+            typedPoint.setY(typedPoint.getY() - displacement);
         } else if (getDirection().equals("W")) {
-            setX(getX() - displacement);
+            typedPoint.setX(typedPoint.getX() - displacement);
         } else {
-            setX(getX() + displacement);
+            typedPoint.setX(typedPoint.getX() + displacement);
         }
     }
 
@@ -63,47 +61,30 @@ public class Rover {
         this.direction = direction;
     }
 
-    public int getY() {
-        return typedPoint.getY();
-    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    public void setY(int y) {
-        this.typedPoint.setY(y);
-    }
+        Rover rover = (Rover) o;
 
-    public int getX() {
-        return typedPoint.getX();
-    }
+        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
+        return typedPoint != null ? typedPoint.equals(rover.typedPoint) : rover.typedPoint == null;
 
-    public void setX(int x) {
-        this.typedPoint.setX(x);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
+    public int hashCode() {
+        int result = direction != null ? direction.hashCode() : 0;
+        result = 31 * result + (typedPoint != null ? typedPoint.hashCode() : 0);
+        return result;
+    }
 
-        if (obj == null)
-            return false;
-
-        if (getClass() != obj.getClass())
-            return false;
-
-        Rover other = (Rover) obj;
-
-        if (getDirection() == null) {
-            if (other.getDirection() != null)
-                return false;
-        } else if (!getDirection().equals(other.getDirection()))
-            return false;
-
-        if (getX() != other.getX())
-            return false;
-
-        if (getY() != other.getY())
-            return false;
-
-        return true;
+    @Override
+    public String toString() {
+        return "Rover{" +
+                "direction=" + direction +
+                ", typedPoint=" + typedPoint +
+                '}';
     }
 }

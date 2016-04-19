@@ -30,21 +30,27 @@ public class Direction {
         return new West();
     }
 
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        Direction direction1 = (Direction) object;
+        Direction direction = (Direction) o;
 
-        if (representation != null ? !representation.equals(direction1.representation) : direction1.representation != null) return false;
+        return representation != null ? representation.equals(direction.representation) : direction.representation == null;
 
-        return true;
     }
 
     public int hashCode() {
         int result = super.hashCode();
         result = 31 * result + (representation != null ? representation.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Direction{" +
+                "representation='" + representation + '\'' +
+                '}';
     }
 }
