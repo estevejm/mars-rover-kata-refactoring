@@ -27,20 +27,27 @@ public class Rover {
     }
 
     private void displace(String command) {
-        int displacement = -1;
 
         if (command.equals("f")) {
-            displacement = 1;
-        }
-
-        if (direction.equals(Direction.create("N"))) {
-            point.setY(point.getY() + displacement);
-        } else if (direction.equals(Direction.create("S"))) {
-            point.setY(point.getY() - displacement);
-        } else if (direction.equals(Direction.create("W"))) {
-            point.setX(point.getX() - displacement);
+            if (direction.equals(Direction.create("N"))) {
+                point.setY(point.getY() + 1);
+            } else if (direction.equals(Direction.create("S"))) {
+                point.setY(point.getY() - 1);
+            } else if (direction.equals(Direction.create("W"))) {
+                point.setX(point.getX() - 1);
+            } else {
+                point.setX(point.getX() + 1);
+            }
         } else {
-            point.setX(point.getX() + displacement);
+            if (direction.equals(Direction.create("N"))) {
+                point.setY(point.getY() - 1);
+            } else if (direction.equals(Direction.create("S"))) {
+                point.setY(point.getY() + 1);
+            } else if (direction.equals(Direction.create("W"))) {
+                point.setX(point.getX() + 1);
+            } else {
+                point.setX(point.getX() - 1);
+            }
         }
     }
 
