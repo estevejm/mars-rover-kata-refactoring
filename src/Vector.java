@@ -40,10 +40,6 @@ public class Vector {
         this.direction = this.direction.rotateRight();
     }
 
-    public Point getPoint() {
-        return point;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
