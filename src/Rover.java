@@ -18,11 +18,11 @@ public class Rover {
     }
 
     private void interpretAndExecuteCommand(Command command) {
-        if (command.getValue().equals("r")) {
+        if (command.equals(new Command("r"))) {
             rotateRight();
-        } else if (command.getValue().equals("l")) {
+        } else if (command.equals(new Command("l"))) {
             rotateLeft();
-        } else if (command.getValue().equals("f")) {
+        } else if (command.equals(new Command("f"))) {
             moveForward();
         } else {
             moveBackwards();
